@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1 class="jumbotron bg-primary text-white">MakeWIKI</h1>
+<div class="jumbotron bg-primary text-white">
+    <h1>MakeWIKI</h1>
+</div>
 <br>
 <div class="row ml-5">
 
@@ -9,13 +11,14 @@
 
     {% for page in pages %}
 
-    <div class="card rounded col-md-3 mr-3 bg-secondary">
+    <div class="card rounded col-md-3 mr-3 mb-3 bg-secondary">
         <p>
         <a href="{{ page.slug }}">
             <h3>{{ page.title }}</h3>
-            <hr>
-            <p>{{ page.content }}
         </a>
+        <hr>
+        <p>
+            {{ page.snippet }}...
         </p>
     </div>
     {% endfor %}
