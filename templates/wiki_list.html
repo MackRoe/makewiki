@@ -1,5 +1,24 @@
-{% for page in pages %}
-<p>
-<a href="{{ page.slug }}">{{ page.title }}</a>
-</p>
-{% endfor %}
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="jumbotron bg-primary text-white">MakeWIKI</h1>
+<br>
+<div class="row ml-5">
+
+
+
+    {% for page in pages %}
+
+    <div class="card rounded col-md-3 mr-3 bg-secondary">
+        <p>
+        <a href="{{ page.slug }}">
+            <h3>{{ page.title }}</h3>
+            <hr>
+            <p>{{ page.content }}
+        </a>
+        </p>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
